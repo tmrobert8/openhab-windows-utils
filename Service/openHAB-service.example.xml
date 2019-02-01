@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<service>
+    <id>openHAB</id>
+    <name>openHAB Service</name>
+    <description>Create an openHAB service to run openHAB automatically at startup</description>
+    <executable>c:\openhab2\runtime\bin\karaf.bat</executable>
+    <startargument>server</startargument>
+    <stopexecutable>c:\openhab2\runtime\bin\karaf.bat</stopexecutable>
+    <stopargument>stop</stopargument>
+    <logpath>c:\openhab2\userdata\logs</logpath>
+    <workingdirectory>c:\openhab2</workingdirectory>
+    <log mode='rotate'>
+    </log>
+</service>

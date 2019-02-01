@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<service>
+    <id>$$SERVICEID</id>
+    <name>$$LANG_SERVICENAME</name>
+    <description>$$LANG_SERVICEDESC</description>
+    <executable>$$OPENHAB_RUNTIME\bin\karaf.bat</executable>
+    <startargument>server</startargument>
+    <stopexecutable>$$OPENHAB_RUNTIME\bin\karaf.bat</stopexecutable>
+    <stopargument>stop</stopargument>
+    <logpath>$$OPENHAB_USERDATA\logs</logpath>
+    <workingdirectory>$$OPENHAB_HOME</workingdirectory>
+    <log mode='rotate'>
+    </log>
+</service>
