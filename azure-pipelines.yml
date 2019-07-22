@@ -22,5 +22,5 @@ steps:
     action: 'create'
     target: '$(Build.SourceVersion)'
     tagSource: 'manual'
-    tag: 'beta-$(date:yyyy).$(date:M).$(date:d)$(rev:.r)'
+    tag: beta-$(date:yyyyMMdd)-$(rev:.r)
     isPreRelease: true
