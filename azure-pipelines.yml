@@ -15,9 +15,11 @@ steps:
     makensis "/XOutFile $(Build.ArtifactStagingDirectory)/openHAB-setup.exe" openhab.nsi
   displayName: 'Build openHAB Windows installer'
 
-
-- task: PublishBuildArtifacts@1
+- task: GitHubRelease@0
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/openHAB-setup.exe'
-    ArtifactName: 'installer'
-    publishLocation: 'Container'
+    gitHubConnection: 'openhab windows'
+    repositoryName: 'tmrobert8/openhab-windows-utils'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'auto'
+    isPreRelease: true
