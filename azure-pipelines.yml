@@ -21,5 +21,6 @@ steps:
     repositoryName: 'tmrobert8/openhab-windows-utils'
     action: 'create'
     target: '$(Build.SourceVersion)'
-    tagSource: 'auto'
+    tagSource: 'Git tag'
+    tag: 'beta'
     isPreRelease: true
