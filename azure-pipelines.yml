@@ -12,5 +12,12 @@ pool:
 steps:
 - script: |
     cd Installer
-    makensis openhab.nsi
+    makensis "/XOutFile $(Build.ArtifactStagingDirectory)/openHAB-setup.exe" openhab.nsi
   displayName: 'Build openHAB Windows installer'
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/openHAB-setup.exe'
+    ArtifactName: 'installer'
+    publishLocation: 'Container'
