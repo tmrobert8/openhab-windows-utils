@@ -1,4 +1,4 @@
-2.5.0-SNAPSHOT=openHAB 2.5 Snapshot
+2.5.0=openHAB 2.5 Stable
 2.4.0=openHAB 2.4 Stable
 2.3.0=openHAB 2.3 Stable
 2.2.0=openHAB 2.2 Stable
