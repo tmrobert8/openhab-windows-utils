@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+variables:
+ myTag: $[format('beta-{0:yyyyMMdd}', pipeline.startTime)]
+
+trigger:
+- master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+- script: |
+    cd Installer
+    makensis "/XOutFile $(Build.ArtifactStagingDirectory)/openHAB-setup.exe" openhab.nsi
+  displayName: 'Build openHAB Windows installer'
+
+- task: GitHubRelease@0
+  inputs:
+    gitHubConnection: 'openhab windows'
+    repositoryName: 'tmrobert8/openhab-windows-utils'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'manual'
+    tag: $(myTag)
+    isPreRelease: true

@@ -251,7 +251,7 @@ LangString LangAbortUpgradeUninstallBad ${LANG_ENGLISH} "Could not uninstall pri
 ; Installer settings
 ; -------------------------------------------------------------------------------
 Name "openHAB"
-OutFile ".\Output\openHAB-setup.exe"
+;OutFile ".\Output\openHAB-setup.exe"
 ShowInstDetails show
 ShowUnInstDetails show
 RequestExecutionLevel admin
